@@ -1,0 +1,60 @@
+/* EMCALC FUNCTION FROM ZURB FOUNDATION
+    1. Set base font size
+    2. Strip unit of measure and return it
+    3. Calculate and return em values
+*/
+
+/* ===SET BASE FONT SIZE=== */
+$base-font-size: 100% !default;
+$base-line-height: 150%;
+
+$em-base: 16px !default;
+
+/* ===STRIP AND RETURN UNIT OF MEASURE=== */
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-em($value, $base-value: $em-base)  {
+    $value: strip-unit($value) / strip-unit($base-value) * 1em;
+    @if ($value == 0em) { $value: 0; } /* Turn 0em into 0 */
+    @return $value;
+}
+
+@function em-calc($values, $base-value: $em-base) {
+    $max: length($values);
+
+    @if $max == 1 { @return convert-to-em(nth($values, 1), $base-value); }
+
+    $emValues: ();
+
+    @for $i from 1 through $max {
+        $emValues: append($emValues, convert-to-em(nth($values, $i), $base-value));
+    }
+
+    @return $emValues;
+}
+
+/* ===SUPPORT OLD SYNTAX=== */
+@function emCalc($values){
+    @return em-calc($values);
+}
+
+/* ===DIVIDERS=== */
+@mixin divider($top, $bottom) {
+    display:block;
+    border: 0;
+    padding:0;
+    height: 1px;
+    border-top:1px solid $gray-accent;
+    width:80%;
+    margin:$top auto $bottom;
+}
+
+/* ===BOX SHADOW=== */
+@mixin box-shadow($shadow) {
+    -o-box-shadow:      $shadow;
+    -moz-box-shadow:    $shadow;
+    -webkit-box-shadow: $shadow;
+    box-shadow:         $shadow;
+}

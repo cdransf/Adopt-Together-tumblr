@@ -1,0 +1,35 @@
+# adopt together tumblr
+
+### built by
+
+Cory Dransfeldt
+@cdransf
+
+### built with
+
+HTML5 Boilerplate
+https://html5boilerplate.com
+
+Yeoman
+http://yeoman.io
+
+Atom
+http://atom.io
+
+Bourbon
+http://bourbon.io
+
+Neat
+http://neat.bourbon.io
+
+Grunt
+http://gruntjs.com
+
+Bower
+http://bower.io
+
+npm
+https://www.npmjs.org
+
+git
+http://git-scm.com

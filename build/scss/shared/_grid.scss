@@ -1,0 +1,52 @@
+/* ===GRID=== */
+
+.grid {
+
+    &-main-container {
+        @include outer-container;
+    }
+
+    &-row {
+        @include row;
+        @include pad (0 10%);
+        
+        @media only screen and (max-width: 640px) {
+            @include pad (0 10%);
+        }
+    }
+
+    $grid-columns: 12;
+
+    @for $i from 0 through $grid-columns {
+
+        &-columns-#{$i} {
+            @include span-columns($i);
+        }
+
+        &-columns-small-#{$i} {
+            @include span-columns($i);
+
+            @media only screen and (max-width: 640px) {
+                @include span-columns(12);
+            }
+        }
+    }
+    @for $i from 0 through $grid-columns {
+
+        &-shift-left-#{$i} {
+            @include shift(-$i);
+        }
+
+        &-shift-right-#{$i} {
+            @include shift($i);
+        }
+
+        @media only screen and (max-width: 640px) {
+            &-shift-left-#{$i},
+            &-shift-right-#{$i} {
+                @include shift(0);
+            }
+        }
+
+    }
+}

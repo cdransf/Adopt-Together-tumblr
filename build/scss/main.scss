@@ -1,0 +1,74 @@
+/* ===BOWER COMPONENTS=== */
+@import '../../bower_components/meyer-reset/stylesheets/meyer-reset';
+@import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../../bower_components/neat/app/assets/stylesheets/neat';
+
+/* ===VARIABLES AND SHARED COMPONENTS=== */
+@import 'shared/variables';
+@import 'shared/mixins';
+@import 'shared/helper-classes';
+@import 'shared/grid';
+
+/* ===GLOBAL=== */
+
+::-moz-selection {
+    color: $white;
+    background: $green;
+}
+
+::selection {
+    color: $white;
+    background: $green;
+}
+
+html,
+body {
+    font-family: $font-sans-serif;
+    font-size: 100%;
+    font-weight: 400;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+            font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+    -webkit-font-feature-settings: 'kern';
+       -moz-font-feature-settings: 'kern';
+       -moz-font-feature-settings: 'kern=1';
+            font-feature-settings: 'kern';
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    color: $dark-gray;
+    background-color: $white;
+}
+
+img {
+    &:focus {
+        border: 0;
+        outline: 0;
+    }
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: oblique;
+}
+
+a {
+    @include transition(color .3s ease-in-out);
+    text-decoration: none;
+    color: $green;
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+        color: darken($green, 10%);
+    }
+    &:focus {
+        outline: 0;
+    }
+}
+
+/* ===MEDIA QUERIES=== */
+@import 'shared/media-queries';

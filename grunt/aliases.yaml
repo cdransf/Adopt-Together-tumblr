@@ -1,0 +1,7 @@
+default:
+    - 'watch'
+    - 'sass'
+    - 'csscomb'
+    - 'concat'
+    - 'uglify'
+    - 'cssmin'

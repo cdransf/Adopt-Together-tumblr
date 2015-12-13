@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{Title}</title>
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
+
+        <meta charset="utf-8" />
+        <meta property="og:title" content="{Title}"/>
+        <meta property="og:type" content="profile"/>
+        <meta property="og:url" content="{BlogURL}"/>
+        <meta property="og:site_name" content="{Title}"/>
+        {block:Description}
+        <meta name="description" content="{Description}" />
+        <meta property="og:description" content="{Description}"/>
+        {/block:Description}
+        <meta name="twitter:card" value="summary">
+        {block:IfTwitterUsername}
+        <meta name="twitter:site" value="@{text:Twitter Username}">
+        <meta name="twitter:creator" value="@{text:Twitter Username}">
+        {/block:IfTwitterUsername}
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="{BlogURL}">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- styles -->
+        <link rel="stylesheet" href="assets/css/main.min.css">
+        <!-- user-added custom css -->
+        <style>
+            {CustomCSS}
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="assets/js/main.min.js"></script>
+        {block:IfGoogleAnalyticsID}
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','{text:Google Analytics ID}','auto');ga('send','pageview');
+        </script>
+        {/block:IfGoogleAnalyticsID}
+    </body>
+</html>

@@ -1,0 +1,8 @@
+{
+    "name": "Adopt Together tumblr",
+    "dependencies": {
+        "bourbon"    : "latest",
+        "neat"       : "latest",
+        "meyer-reset": "latest"
+    }
+}
