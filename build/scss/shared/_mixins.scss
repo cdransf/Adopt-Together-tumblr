@@ -40,17 +40,6 @@ $em-base: 16px !default;
     @return em-calc($values);
 }
 
-/* ===DIVIDERS=== */
-@mixin divider($top, $bottom) {
-    display:block;
-    border: 0;
-    padding:0;
-    height: 1px;
-    border-top:1px solid $gray-accent;
-    width:80%;
-    margin:$top auto $bottom;
-}
-
 /* ===BOX SHADOW=== */
 @mixin box-shadow($shadow) {
     -o-box-shadow:      $shadow;

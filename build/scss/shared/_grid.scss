@@ -9,7 +9,7 @@
     &-row {
         @include row;
         @include pad (0 10%);
-        
+
         @media only screen and (max-width: 640px) {
             @include pad (0 10%);
         }
@@ -48,5 +48,18 @@
             }
         }
 
+    }
+
+    &-collapse-left {
+        padding-left: 0;
+    }
+
+    &-collapse-right {
+        padding-right: 0
+    }
+
+    &-collapse {
+        padding-left: 0;
+        padding-right: 0;
     }
 }

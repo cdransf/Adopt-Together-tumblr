@@ -8,11 +8,45 @@
 }
 
 @media only screen and (max-width: emCalc(768px)) {
+    #header {
+        #logo {
+            margin: emCalc(15px) auto 0;
+            max-width: emCalc(200px);
+        }
 
+        #logo,
+        #donate {
+            display: block;
+        }
+    }
+
+    #banner {
+        width: 125%;
+        margin-left: -12.5%;
+    }
+}
+
+@media only screen and (max-width: emCalc(710px)) {
+    #header {
+        #donate {
+            width: emCalc(91px);
+            margin-top: emCalc(14px);
+            margin-bottom: emCalc(15px);
+            &-link {
+                font-size: emCalc(13px);
+                margin-top: emCalc(25.6px);
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: emCalc(375px)) {
-
+    #header {
+        #donate-link {
+            font-size: emCalc(16px);
+            margin-top: emCalc(14px);
+        }
+    }
 }
 
 @media only screen and (max-width: emCalc(320px)) {
