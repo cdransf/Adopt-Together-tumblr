@@ -27,7 +27,7 @@ body {
     color: $dark-gray;
     font-family: $font-sans-serif;
     font-size: 100%;
-    font-weight: 400;
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
@@ -52,7 +52,7 @@ img {
 }
 
 strong {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 em {
@@ -74,10 +74,11 @@ a {
     }
 }
 
+h2,
 h3 {
     font-size: emCalc(24px);
-    font-weight: 500;
-    margin-top: emCalc(3.5px);
+    font-weight: 600;
+    margin-top: emCalc(10px);
     a {
         color: $dark-gray;
         &:hover,
@@ -86,6 +87,10 @@ h3 {
             color: darken($green, 10%);
         }
     }
+}
+
+h2 {
+    font-size: emCalc(18px)
 }
 
 p {
@@ -121,6 +126,7 @@ hr {
     .back-link {
         color: $dark-gray;
         font-size: 16px;
+        font-weight: 600;
     }
 
     .donate {
@@ -129,7 +135,7 @@ hr {
 }
 
 .hero {
-    background: url(../img/blog-hero.jpg) no-repeat center top;
+    background: url(http://static.tumblr.com/nh622yq/Pirnzhaiy/hero.jpg) no-repeat center top;
     background-size: cover;
     margin-bottom: emCalc(30px);
 
@@ -140,8 +146,9 @@ hr {
     h1 {
         color: $white;
         font-size: 36px;
-        font-weight: 500;
+        font-weight: 600;
         text-align: center;
+        text-shadow: 0 1px 3px rgba(0,0,0,.15);
     }
 
     p.lead {
@@ -149,13 +156,14 @@ hr {
         font-size: 16px;
         font-weight: 500;
         text-align: center;
+        text-shadow: 0 1px 3px rgba(0,0,0,.15);
     }
 }
 
 .date {
     font-size: emCalc(13px);
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
     display: block;
     margin-top: emCalc(-1px);
     margin-bottom: emCalc(23px);
@@ -190,7 +198,7 @@ hr {
     border-radius: 4px;
     color: $white;
     display: inline-block;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1;
     padding: 10px 22px 8px; // For some reason the top and bottom padding of buttons never line up
 
@@ -221,7 +229,7 @@ blockquote {
 .chat {
     margin-bottom: emCalc(31px);
     .label {
-        font-weight: 500;
+        font-weight: 600;
     }
 }
 

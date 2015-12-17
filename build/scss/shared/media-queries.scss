@@ -19,6 +19,14 @@
 }
 
 @media only screen and (max-width: emCalc(710px)) {
+    .grid-columns-8 {
+        width: 100%;
+    }
+
+    .grid-shift-right-2 {
+        margin-left: 0;
+    }
+
     body {
         font-size: 14px;
     }

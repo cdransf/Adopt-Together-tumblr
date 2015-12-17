@@ -498,7 +498,7 @@ body {
   color: #555;
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   font-size: 100%;
-  font-weight: 400;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
@@ -517,7 +517,7 @@ img.responsive {
   width: 100%; }
 
 strong {
-  font-weight: 500; }
+  font-weight: 600; }
 
 em {
   font-style: oblique; }
@@ -531,14 +531,22 @@ a {
   a:focus {
     outline: 0; }
 
+h2,
 h3 {
   font-size: 1.5em;
-  font-weight: 500;
-  margin-top: 0.21875em; }
+  font-weight: 600;
+  margin-top: 0.625em; }
+  h2 a,
   h3 a {
     color: #555; }
-    h3 a:hover, h3 a:active, h3 a:focus {
+    h2 a:hover, h2 a:active, h2 a:focus,
+    h3 a:hover,
+    h3 a:active,
+    h3 a:focus {
       color: #5ca017; }
+
+h2 {
+  font-size: 1.125em; }
 
 p {
   margin-bottom: 0.9375em; }
@@ -568,12 +576,13 @@ hr {
     margin-top: 0.8125em; }
   #header .back-link {
     color: #555;
-    font-size: 16px; }
+    font-size: 16px;
+    font-weight: 600; }
   #header .donate {
     margin-left: 0.75em; }
 
 .hero {
-  background: url(../img/blog-hero.jpg) no-repeat center top;
+  background: url(http://static.tumblr.com/nh622yq/Pirnzhaiy/hero.jpg) no-repeat center top;
   background-size: cover;
   margin-bottom: 1.875em; }
   .hero .hero-content {
@@ -581,18 +590,20 @@ hr {
   .hero h1 {
     color: #fff;
     font-size: 36px;
-    font-weight: 500;
-    text-align: center; }
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); }
   .hero p.lead {
     color: #fff;
     font-size: 16px;
     font-weight: 500;
-    text-align: center; }
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); }
 
 .date {
   font-size: 0.8125em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   display: block;
   margin-top: -0.0625em;
   margin-bottom: 1.4375em; }
@@ -620,7 +631,7 @@ hr {
   border-radius: 4px;
   color: #fff;
   display: inline-block;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
   padding: 10px 22px 8px; }
   .btn:hover, .btn:focus {
@@ -643,7 +654,7 @@ blockquote {
 .chat {
   margin-bottom: 1.9375em; }
   .chat .label {
-    font-weight: 500; }
+    font-weight: 600; }
 
 .actions,
 .tags {
@@ -686,6 +697,12 @@ blockquote {
     width: 80%;
     padding: 70px 0; } }
 @media only screen and (max-width: 44.375em) {
+  .grid-columns-8 {
+    width: 100%; }
+
+  .grid-shift-right-2 {
+    margin-left: 0; }
+
   body {
     font-size: 14px; }
 
