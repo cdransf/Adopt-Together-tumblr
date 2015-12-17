@@ -494,6 +494,8 @@ html {
 
 html,
 body {
+  background-color: #fff;
+  color: #555;
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   font-size: 100%;
   font-weight: 400;
@@ -506,9 +508,7 @@ body {
   -moz-font-feature-settings: 'kern=1';
   font-feature-settings: 'kern';
   line-height: 1.6;
-  -webkit-text-size-adjust: 100%;
-  color: #555;
-  background-color: #fff; }
+  -webkit-text-size-adjust: 100%; }
 
 img:focus {
   border: 0;
