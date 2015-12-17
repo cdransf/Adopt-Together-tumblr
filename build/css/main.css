@@ -494,10 +494,10 @@ html {
 
 html,
 body {
-  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, sans-serif;
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   font-size: 100%;
   font-weight: 400;
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
   text-rendering: geometricPrecision;
@@ -517,15 +517,12 @@ img.responsive {
   width: 100%; }
 
 strong {
-  font-weight: 700; }
+  font-weight: 500; }
 
 em {
   font-style: oblique; }
 
 a {
-  -webkit-transition: color 0.3s ease-in-out;
-  -moz-transition: color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out;
   text-decoration: none;
   color: #76cc1e; }
   a:hover, a:active, a:focus {
@@ -536,7 +533,7 @@ a {
 
 h3 {
   font-size: 1.5em;
-  font-weight: 700;
+  font-weight: 500;
   margin-top: 0.21875em; }
   h3 a {
     color: #555; }
@@ -552,33 +549,50 @@ hr {
   padding: 0;
   height: 1px;
   border-top: 1px solid #ddd;
-  margin-top: 1.4375em;
-  margin-bottom: 0.875em; }
+  margin-top: emcalc(23px);
+  margin-bottom: emcalc(14px); }
 
 /* ===BODY=== */
 #header {
-  min-height: 3.75em;
   -o-box-shadow: 0.125em 0 0.25em rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0.125em 0 0.25em rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0.125em 0 0.25em rgba(0, 0, 0, 0.2);
-  box-shadow: 0.125em 0 0.25em rgba(0, 0, 0, 0.2); }
+  box-shadow: 0.125em 0 0.25em rgba(0, 0, 0, 0.2);
+  min-height: 3.75em;
+  position: relative;
+  z-index: 1000; }
   #header #logo {
-    margin-top: 0.46875em;
-    max-width: 17.5em; }
-  #header #donate {
-    max-width: 5.6875em;
-    margin-top: 0.90625em; }
-    #header #donate-link {
-      display: block;
-      margin-top: 1.09375em; }
+    margin-top: 1.25em;
+    max-width: 8.75em; }
+  #header .right {
+    margin-top: 0.8125em; }
+  #header .back-link {
+    color: #555;
+    font-size: 16px; }
+  #header .donate {
+    margin-left: 0.75em; }
 
-#banner {
-  margin-bottom: 0.9375em; }
+.hero {
+  background: url(../img/blog-hero.jpg) no-repeat center top;
+  background-size: cover;
+  margin-bottom: 1.875em; }
+  .hero .hero-content {
+    padding: 90px 0; }
+  .hero h1 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 500;
+    text-align: center; }
+  .hero p.lead {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center; }
 
 .date {
   font-size: 0.8125em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 500;
   display: block;
   margin-top: -0.0625em;
   margin-bottom: 1.4375em; }
@@ -601,6 +615,21 @@ hr {
   .wrapper-player iframe {
     width: 100%; }
 
+.btn {
+  background: #76cc1e;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 1;
+  padding: 10px 22px 8px; }
+  .btn:hover, .btn:focus {
+    background: #8fe23b;
+    color: #fff; }
+  .btn:active {
+    background: #6cba1b;
+    color: #e6e6e6; }
+
 .post-photo {
   margin-top: 1em; }
 
@@ -614,7 +643,7 @@ blockquote {
 .chat {
   margin-bottom: 1.9375em; }
   .chat .label {
-    font-weight: 700; }
+    font-weight: 500; }
 
 .actions,
 .tags {
@@ -651,28 +680,103 @@ blockquote {
 
 /* ===MEDIA QUERIES=== */
 /* ===MEDIA QUERIES=== */
-@media only screen and (max-width: 48em) {
-  #header #logo {
-    margin: 0.9375em auto 0;
-    max-width: 12.5em; }
-  #header #logo,
-  #header #donate {
-    display: block; }
-
-  #banner {
-    width: 125%;
-    margin-left: -12.5%; } }
+@media only screen and (max-width: 64em) {
+  .hero .hero-content {
+    margin: 0 10%;
+    width: 80%;
+    padding: 70px 0; } }
 @media only screen and (max-width: 44.375em) {
-  #header #donate {
-    width: 5.6875em;
-    margin-top: 0.875em;
+  body {
+    font-size: 14px; }
+
+  #header {
+    min-height: 3.125em; }
+    #header #logo {
+      margin-top: 16px;
+      max-width: 7.5em; }
+    #header .right {
+      margin-top: 8px; }
+    #header .back-link {
+      font-size: 14px; }
+    #header .btn {
+      font-size: 14px;
+      padding: 8px 15px; }
+
+  .hero {
     margin-bottom: 0.9375em; }
-    #header #donate-link {
-      font-size: 0.8125em;
-      margin-top: 1.6em; } }
+    .hero .hero-content {
+      margin: 0;
+      padding: 50px 0;
+      width: 100%; }
+      .hero .hero-content h1 {
+        font-size: 24px; }
+      .hero .hero-content p.lead {
+        font-size: 13px; } }
+@media only screen and (max-width: 30em) {
+  .grid-columns-8 {
+    width: 100%; }
+
+  #header {
+    min-height: 3em; }
+    #header #logo {
+      margin-top: 12px;
+      max-width: 8.125em; }
+    #header .right {
+      margin-top: 6px; }
+    #header .back-link {
+      font-size: 0.875em;
+      margin-top: 0.875em; }
+    #header .btn {
+      border-radius: 3px;
+      font-size: 13px;
+      margin-left: 0.375em;
+      padding: 8px 12px; }
+
+  .hero {
+    margin-bottom: 0.75em; }
+    .hero .hero-content {
+      margin: 0;
+      padding: 30px 0;
+      width: 100%; }
+      .hero .hero-content h1 {
+        font-size: 26px; }
+      .hero .hero-content p.lead {
+        font-size: 14px; }
+
+  .grid-row {
+    padding: 0 5%; } }
 @media only screen and (max-width: 23.4375em) {
-  #header #donate-link {
-    font-size: 1em;
-    margin-top: 0.875em; } }
+  body {
+    font-size: 12px; }
+
+  #header #logo {
+    margin-top: 13px;
+    max-width: 8.125em; }
+  #header .right {
+    margin-top: 8px; }
+  #header .back-link {
+    font-size: 0.8125em;
+    margin-top: 0.875em; }
+  #header .btn {
+    border-radius: 3px;
+    font-size: 11px;
+    margin-left: 0.375em;
+    padding: 6px 10px; }
+
+  .hero {
+    margin-bottom: 0.625em; }
+    .hero .hero-content {
+      padding: 20px 0; }
+      .hero .hero-content h1 {
+        font-size: 18px; }
+      .hero .hero-content p.lead {
+        font-size: 11px;
+        line-height: 1.4; }
+
+  .grid-row {
+    padding: 0 5%; } }
+@media only screen and (max-width: 20em) {
+  .grid-row {
+    padding: 0 3%; } }
 
 /*# sourceMappingURL=main.css.map */

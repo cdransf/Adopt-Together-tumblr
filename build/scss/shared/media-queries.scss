@@ -1,6 +1,13 @@
 /* ===MEDIA QUERIES=== */
 @media only screen and (max-width: emCalc(1024px)) {
 
+    .hero {
+        .hero-content {
+            margin: 0 10%;
+            width: 80%;
+            padding: 70px 0;
+        }
+    }
 }
 
 @media only screen and (max-width: emCalc(960px)) {
@@ -8,47 +15,161 @@
 }
 
 @media only screen and (max-width: emCalc(768px)) {
-    #header {
-        #logo {
-            margin: emCalc(15px) auto 0;
-            max-width: emCalc(200px);
-        }
 
-        #logo,
-        #donate {
-            display: block;
-        }
-    }
-
-    #banner {
-        width: 125%;
-        margin-left: -12.5%;
-    }
 }
 
 @media only screen and (max-width: emCalc(710px)) {
+    body {
+        font-size: 14px;
+    }
+
     #header {
-        #donate {
-            width: emCalc(91px);
-            margin-top: emCalc(14px);
-            margin-bottom: emCalc(15px);
-            &-link {
-                font-size: emCalc(13px);
-                margin-top: emCalc(25.6px);
+        min-height: emCalc(50px);
+
+        #logo {
+            margin-top: 16px;
+            max-width: emCalc(120px);
+        }
+
+        .right {
+            margin-top: 8px;
+        }
+
+        .back-link {
+            font-size: 14px;
+        }
+
+        .btn {
+            font-size: 14px;
+            padding: 8px 15px;
+        }
+    }
+
+    .hero {
+        margin-bottom: emCalc(15px);
+
+        .hero-content {
+            margin: 0;
+            padding: 50px 0;
+            width: 100%;
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p.lead {
+                font-size: 13px;
             }
         }
     }
 }
 
-@media only screen and (max-width: emCalc(375px)) {
+@media only screen and (max-width: emCalc(480px)) {
+    .grid-columns-8 {
+        width: 100%;
+    }
+
     #header {
-        #donate-link {
-            font-size: emCalc(16px);
+        min-height: emCalc(48px);
+
+        #logo {
+            margin-top: 12px;
+            max-width: emCalc(130px);
+        }
+
+        .right {
+            margin-top: 6px;
+        }
+
+        .back-link {
+            font-size: emCalc(14px);
             margin-top: emCalc(14px);
         }
+
+        .btn {
+            border-radius: 3px;
+            font-size: 13px;
+            margin-left: emCalc(6px);
+            padding: 8px 12px;
+        }
+    }
+
+    .hero {
+        margin-bottom: emCalc(12px);
+
+        .hero-content {
+            margin: 0;
+            padding: 30px 0;
+            width: 100%;
+
+            h1 {
+                font-size: 26px;
+            }
+
+            p.lead {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .grid-row {
+        padding: 0 5%;
+    }
+}
+
+
+@media only screen and (max-width: emCalc(375px)) {
+    body {
+        font-size: 12px;
+    }
+
+    #header {
+        #logo {
+            margin-top: 13px;
+            max-width: emCalc(130px);
+        }
+
+        .right {
+            margin-top: 8px;
+        }
+
+        .back-link {
+            font-size: emCalc(13px);
+            margin-top: emCalc(14px);
+        }
+
+        .btn {
+            border-radius: 3px;
+            font-size: 11px;
+            margin-left: emCalc(6px);
+            padding: 6px 10px;
+        }
+    }
+
+    .hero {
+        margin-bottom: emCalc(10px);
+
+        .hero-content {
+            padding: 20px 0;
+
+            h1 {
+                font-size: 18px;
+            }
+
+            p.lead {
+                font-size: 11px;
+                line-height: 1.4;
+            }
+        }
+    }
+
+    .grid-row {
+        padding: 0 5%;
     }
 }
 
 @media only screen and (max-width: emCalc(320px)) {
-
+    .grid-row {
+        padding: 0 3%;
+    }
 }

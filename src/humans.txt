@@ -1,9 +1,12 @@
-# adopt together tumblr
+# AdoptTogether tumblr
 
 ### built by
 
 Cory Dransfeldt
 @cdransf
+
+Carter De Angelis
+@carterdea
 
 ### built with
 

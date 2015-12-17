@@ -993,7 +993,7 @@ html
 html,
 body
 {
-    font-family: 'open sans', 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
+    font-family: 'Whitney SSm A', 'Whitney SSm B', sans-serif;
     font-size: 100%;
     font-weight: 400;
     line-height: 1.6;
@@ -1001,7 +1001,7 @@ body
     color: #555;
     background-color: #fff; 
 
-    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
             font-smoothing: antialiased;
     text-rendering: geometricPrecision;
@@ -1024,7 +1024,7 @@ img.responsive
 
 strong
 {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 em
@@ -1034,9 +1034,6 @@ em
 
 a
 {
-    -webkit-transition: color .3s ease-in-out;
-       -moz-transition: color .3s ease-in-out;
-            transition: color .3s ease-in-out;
     text-decoration: none;
 
     color: #76cc1e;
@@ -1057,7 +1054,7 @@ a:focus
 h3
 {
     font-size: 1.5em;
-    font-weight: 700;
+    font-weight: 500;
 
     margin-top: .21875em;
 }
@@ -1082,8 +1079,8 @@ hr
     display: block;
 
     height: 1px;
-    margin-top: 1.4375em;
-    margin-bottom: .875em; 
+    margin-top: emcalc(23px);
+    margin-bottom: emcalc(14px); 
     padding: 0;
 
     border: 0;
@@ -1093,40 +1090,71 @@ hr
 /* ===BODY=== */
 #header
 {
+    position: relative;
+    z-index: 1000; 
+
     min-height: 3.75em;
 
     -webkit-box-shadow: .125em 0 .25em rgba(0, 0, 0, .2);
        -moz-box-shadow: .125em 0 .25em rgba(0, 0, 0, .2);
-            box-shadow: .125em 0 .25em rgba(0, 0, 0, .2); 
+            box-shadow: .125em 0 .25em rgba(0, 0, 0, .2);
 
          -o-box-shadow: .125em 0 .25em rgba(0, 0, 0, .2);
 }
 #header #logo
 {
-    max-width: 17.5em; 
-    margin-top: .46875em;
+    max-width: 8.75em; 
+    margin-top: 1.25em;
 }
-#header #donate
+#header .right
 {
-    max-width: 5.6875em;
-    margin-top: .90625em;
+    margin-top: .8125em;
 }
-#header #donate-link
+#header .back-link
 {
-    display: block;
+    font-size: 16px; 
 
-    margin-top: 1.09375em;
+    color: #555;
+}
+#header .donate
+{
+    margin-left: .75em;
 }
 
-#banner
+.hero
 {
-    margin-bottom: .9375em;
+    margin-bottom: 1.875em; 
+
+    background: url(../img/blog-hero.jpg) no-repeat center top;
+    background-size: cover;
+}
+.hero .hero-content
+{
+    padding: 90px 0;
+}
+.hero h1
+{
+    font-size: 36px;
+    font-weight: 500;
+
+    text-align: center; 
+
+    color: #fff;
+}
+.hero p.lead
+{
+    font-size: 16px;
+    font-weight: 500;
+
+    text-align: center; 
+
+    color: #fff;
 }
 
 .date
 {
     font-size: .8125em;
-    font-weight: 700;
+    font-weight: 500;
 
     display: block;
 
@@ -1165,6 +1193,31 @@ hr
     width: 100%;
 }
 
+.btn
+{
+    font-weight: 500;
+    line-height: 1;
+
+    display: inline-block;
+
+    padding: 10px 22px 8px; 
+
+    color: #fff;
+    border-radius: 4px;
+    background: #76cc1e;
+}
+.btn:hover,
+.btn:focus
+{
+    color: #fff; 
+    background: #8fe23b;
+}
+.btn:active
+{
+    color: #e6e6e6; 
+    background: #6cba1b;
+}
+
 .post-photo
 {
     margin-top: 1em;
@@ -1187,7 +1240,7 @@ blockquote
 }
 .chat .label
 {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .actions,
@@ -1250,47 +1303,185 @@ blockquote
 
 /* ===MEDIA QUERIES=== */
 /* ===MEDIA QUERIES=== */
-@media only screen and (max-width: 48em)
+@media only screen and (max-width: 64em)
 {
-    #header #logo
+    .hero .hero-content
     {
-        max-width: 12.5em; 
-        margin: .9375em auto 0;
-    }
-    #header #logo,
-    #header #donate
-    {
-        display: block;
-    }
-
-    #banner
-    {
-        width: 125%;
-        margin-left: -12.5%;
+        width: 80%;
+        margin: 0 10%;
+        padding: 70px 0;
     }
 }
 @media only screen and (max-width: 44.375em)
 {
-    #header #donate
+    body
     {
-        width: 5.6875em;
-        margin-top: .875em;
+        font-size: 14px;
+    }
+
+    #header
+    {
+        min-height: 3.125em;
+    }
+    #header #logo
+    {
+        max-width: 7.5em; 
+        margin-top: 16px;
+    }
+    #header .right
+    {
+        margin-top: 8px;
+    }
+    #header .back-link
+    {
+        font-size: 14px;
+    }
+    #header .btn
+    {
+        font-size: 14px;
+
+        padding: 8px 15px;
+    }
+
+    .hero
+    {
         margin-bottom: .9375em;
     }
-    #header #donate-link
+    .hero .hero-content
     {
-        font-size: .8125em;
+        width: 100%; 
+        margin: 0;
+        padding: 50px 0;
+    }
+    .hero .hero-content h1
+    {
+        font-size: 24px;
+    }
+    .hero .hero-content p.lead
+    {
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 30em)
+{
+    .grid-columns-8
+    {
+        width: 100%;
+    }
 
-        margin-top: 1.6em;
+    #header
+    {
+        min-height: 3em;
+    }
+    #header #logo
+    {
+        max-width: 8.125em; 
+        margin-top: 12px;
+    }
+    #header .right
+    {
+        margin-top: 6px;
+    }
+    #header .back-link
+    {
+        font-size: .875em;
+
+        margin-top: .875em;
+    }
+    #header .btn
+    {
+        font-size: 13px;
+
+        margin-left: .375em;
+        padding: 8px 12px; 
+
+        border-radius: 3px;
+    }
+
+    .hero
+    {
+        margin-bottom: .75em;
+    }
+    .hero .hero-content
+    {
+        width: 100%; 
+        margin: 0;
+        padding: 30px 0;
+    }
+    .hero .hero-content h1
+    {
+        font-size: 26px;
+    }
+    .hero .hero-content p.lead
+    {
+        font-size: 14px;
+    }
+
+    .grid-row
+    {
+        padding: 0 5%;
     }
 }
 @media only screen and (max-width: 23.4375em)
 {
-    #header #donate-link
+    body
     {
-        font-size: 1em;
+        font-size: 12px;
+    }
+
+    #header #logo
+    {
+        max-width: 8.125em; 
+        margin-top: 13px;
+    }
+    #header .right
+    {
+        margin-top: 8px;
+    }
+    #header .back-link
+    {
+        font-size: .8125em;
 
         margin-top: .875em;
+    }
+    #header .btn
+    {
+        font-size: 11px;
+
+        margin-left: .375em;
+        padding: 6px 10px; 
+
+        border-radius: 3px;
+    }
+
+    .hero
+    {
+        margin-bottom: .625em;
+    }
+    .hero .hero-content
+    {
+        padding: 20px 0;
+    }
+    .hero .hero-content h1
+    {
+        font-size: 18px;
+    }
+    .hero .hero-content p.lead
+    {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .grid-row
+    {
+        padding: 0 5%;
+    }
+}
+@media only screen and (max-width: 20em)
+{
+    .grid-row
+    {
+        padding: 0 3%;
     }
 }
 

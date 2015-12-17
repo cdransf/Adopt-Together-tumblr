@@ -1,6 +1,6 @@
-# Adopt Together tumblr
+# AdoptTogether tumblr
 
-Source for the Adopt Together tumblr blog.
+Source for the AdoptTogether tumblr blog.
 
 ---
 

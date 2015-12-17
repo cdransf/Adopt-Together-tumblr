@@ -32,11 +32,10 @@
         <!-- viewport tag for mobile -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
         <!-- styles -->
-        <link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/26306034/main.min.css">
+        <link rel="stylesheet" href="./assets/css/main.min.css">
+        <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7610312/729166/css/fonts.css" />
 
         <!-- user-added custom css -->
         <style>
@@ -50,219 +49,191 @@
         <!-- blog header -->
         <div id="header">
             <div class="grid-row">
-                <div class="grid-columns-small-6">
-                    <a href="/" title="{Title}">
-                        <img id="logo" class="responsive" src="http://d.coryd.me/13GZQ+" alt="{Title}" />
-                    </a>
+                <a href="/" title="{Title}">
+                    <img id="logo" class="responsive" src="http://adopttogether.s3.amazonaws.com/blog/logo.png" alt="{Title}" />
+                </a>
+                <div class="right">
+                    <a class="back-link" href="https://www.adopttogether.org" title="{Title}">&larr; Back to AdoptTogether</a>
+                    <a class="donate btn btn-primary" href="{text:Donate Link}" title="{Title}">Donate</a>
                 </div>
-                <div class="grid-columns-small-6 group">
-                    <a id="donate-link" class="left" href="https://www.adopttogether.org" title="{Title}">← Back to AdoptTogether</a>
-                    <a class="right" href="{text:Donate Link}" title="{Title}">
-                        <img id="donate" src="http://d.coryd.me/1lPy3+" alt="{Title}" />
-                    </a>
-                </div>
+            </div>
+        </div>
+        <!-- adopt together banner -->
+        <div class="grid-row hero">
+            <div class="grid-columns-6 grid-shift-right-3 hero-content">
+                <h1>The AdoptTogether Blog</h1>
+                <p class="lead">Thoughts on adoption, news about the AdoptTogether platform, and amazing stories of adoption from our adopting families.</p>
             </div>
         </div>
         <div class="grid-main-container">
-            <!-- adopt together banner -->
             <div class="grid-row">
-                <div class="grid-columns-12">
-                    <img id="banner" class="responsive" src="http://d.coryd.me/18fnz+" alt="The AdoptTogether Blog | Thoughts on adoption, news about the AdoptTogether platform, and amazing stories of adoption from our adopting families." />
-                </div>
-            </div>
-
-            <!-- post markup -->
-            {block:Posts}
-                {block:Text}
-                    <div class="grid-row">
-                        <div class="grid-columns-12">
-                            {block:Title}
+                <div class="grid-columns-8 grid-shift-right-2">
+                    <!-- post markup -->
+                    {block:Posts}
+                        {block:Text}
+                            <div>
+                                {block:Title}
+                                    <h3><a href="{Permalink}">{Title}</a></h3>
+                                {/block:Title}
+                                {block:Date}
+                                <span class="date">
+                                    {ShortMonth} {DayOfMonth}, {Year}
+                                </span>
+                                {/block:Date}
+                                {Body}
+                            </div>
+                        {/block:Text}
+                        {block:Photo}
+                            <div>
+                                <img class="post-photo responsive" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                                {block:Caption}
+                                <div class="caption">
+                                    {Caption}
+                                </div>
+                                {/block:Caption}
+                            </div>
+                        {/block:Photo}
+                        {block:Panorama}
+                            <div>
+                                {LinkOpenTag}
+                                    <img class="post-photo responsive" src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                                {LinkCloseTag}
+                                {block:Caption}
+                                <div class="caption">
+                                    {Caption}
+                                </div>
+                                {/block:Caption}
+                            </div>
+                        {/block:Panorama}
+                        {block:Photoset}
+                            <div>
+                                {Photoset-500}
+                                {block:Caption}
+                                <div class="caption">
+                                    {Caption}
+                                </div>
+                                {/block:Caption}
+                            </div>
+                        {/block:Photoset}
+                        {block:Quote}
+                            <div>
+                                <blockquote>
+                                    {Quote}
+                                    {block:Source}
+                                        <div class="source">{Source}</div>
+                                    {/block:Source}
+                                </blockquote>
+                            </div>
+                        {/block:Quote}
+                        {block:Link}
+                            <div>
+                                <h3><a href="{URL}" class="link" {Target}>{Name} &raquo;</a></h3>
+                                {block:Date}
+                                <span class="date">
+                                    {ShortMonth} {DayOfMonth}, {Year}
+                                </span>
+                                {/block:Date}
+                                {block:Description}
+                                    {Description}
+                                {/block:Description}
+                            </div>
+                        {/block:Link}
+                        {block:Chat}
+                            <div>
+                            
                                 <h3><a href="{Permalink}">{Title}</a></h3>
-                            {/block:Title}
-                            {block:Date}
-                            <span class="date">
-                                {ShortMonth} {DayOfMonth}, {Year}
-                            </span>
-                            {/block:Date}
-                            {Body}
-                        </div>
-                    </div>
-                {/block:Text}
-                {block:Photo}
-                    <div class="grid-row">
-                        <div class="grid-columns-12">
-                            <img class="post-photo responsive" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-                            {block:Caption}
-                            <div class="caption">
-                                {Caption}
+                                {block:Date}
+                                <span class="date">
+                                    {ShortMonth} {DayOfMonth}, {Year}
+                                </span>
+                                {/block:Date}
+                                <ul class="chat">
+                                    {block:Lines}
+                                        <li class="{Alt} user_{UserNumber}">
+                                            {block:Label}
+                                                <span class="label">{Label}</span>
+                                            {/block:Label}
+                                            {Line}
+                                        </li>
+                                    {/block:Lines}
+                                </ul>
                             </div>
-                            {/block:Caption}
-                        </div>
-                    </div>
-                {/block:Photo}
-                {block:Panorama}
-                    <div class="grid-row">
-                        <div class="grid-columns-12">
-                            {LinkOpenTag}
-                                <img class="post-photo responsive" src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-                            {LinkCloseTag}
-                            {block:Caption}
-                            <div class="caption">
+                        {/block:Chat}
+                        {block:Video}
+                            <div>
+                                <div class="wrapper-video">
+                                    {Video-500}
+                                </div>
+                                {block:Caption}
                                 {Caption}
+                                {/block:Caption}
                             </div>
-                            {/block:Caption}
-                        </div>
-                    </div>
-                {/block:Panorama}
-                {block:Photoset}
-                    <div class="grid-row">
-                        <div class="grid-columns-12">
-                            {Photoset-500}
-                            {block:Caption}
-                            <div class="caption">
+                        {/block:Video}
+                        {block:Audio}
+                            <div>
+                                <div class="wrapper-player">
+                                    {AudioEmbed}
+                                </div>
+                                {block:Caption}
                                 {Caption}
+                                {/block:Caption}
                             </div>
-                            {/block:Caption}
-                        </div>
-                    </div>
-                {/block:Photoset}
-                {block:Quote}
-                    <div class="grid-row">
-                        <div class="grid-columns-12">
-                            <blockquote>
-                                {Quote}
-                                {block:Source}
-                                    <div class="source">{Source}</div>
-                                {/block:Source}
-                            </blockquote>
-                        </div>
-                    </div>
-                {/block:Quote}
-                {block:Link}
-                    <div class="grid-row">
-                        <div class="grid-columns-12">
-                            <h3><a href="{URL}" class="link" {Target}>{Name} &raquo;</a></h3>
-                            {block:Date}
-                            <span class="date">
-                                {ShortMonth} {DayOfMonth}, {Year}
-                            </span>
-                            {/block:Date}
-                            {block:Description}
-                                {Description}
-                            {/block:Description}
-                        </div>
-                    </div>
-                {/block:Link}
-                {block:Chat}
-                    <div class="grid-row">
-                        <div class="grid-columns-12">
-                            <h3><a href="{Permalink}">{Title}</a></h3>
-                        </div>
-                        {block:Date}
-                        <span class="date">
-                            {ShortMonth} {DayOfMonth}, {Year}
-                        </span>
-                        {/block:Date}
-                        <ul class="chat">
-                            {block:Lines}
-                                <li class="{Alt} user_{UserNumber}">
-                                    {block:Label}
-                                        <span class="label">{Label}</span>
-                                    {/block:Label}
-                                    {Line}
+                        {/block:Audio}
+
+                        <!-- like and reblog buttons -->
+                        <div>
+                            <ul class="actions group">
+                                <li>
+                                    {LikeButton}
                                 </li>
-                            {/block:Lines}
-                        </ul>
-                    </div>
-                {/block:Chat}
-                {block:Video}
-                    <div class="grid-row">
-                        <div class="gid-columns-12">
-                            <div class="wrapper-video">
-                                {Video-500}
-                            </div>
-                        </div>
-                        {block:Caption}
-                        {Caption}
-                        {/block:Caption}
-                    </div>
-                {/block:Video}
-                {block:Audio}
-                    <div class="grid-row">
-                        <div class="grid-columns-12">
-                            <div class="wrapper-player">
-                                {AudioEmbed}
-                            </div>
-                        </div>
-                        {block:Caption}
-                        {Caption}
-                        {/block:Caption}
-                    </div>
-                {/block:Audio}
-
-                <!-- like and reblog buttons -->
-                <div class="grid-row">
-                    <div class="grid-columns-12">
-                        <ul class="actions group">
-                            <li>
-                                {LikeButton}
-                            </li>
-                            <li>
-                                {ReblogButton}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- post tags -->
-                {block:HasTags}
-                    <div class="grid-row">
-                        <div class="grid-columns-12">
-                            <ul class="tags group">
-                                {block:Tags}
-                                    <li>
-                                        <a href="{TagURL}">{Tag}</a>
-                                    </li>
-                                {/block:Tags}
+                                <li>
+                                    {ReblogButton}
+                                </li>
                             </ul>
                         </div>
-                    </div>
-                {/block:HasTags}
 
-                <!-- post divider -->
-                <div class="grid-row">
-                    <div class="grid-columns-12">
-                        <hr />
-                    </div>
-                </div>
+                        <!-- post tags -->
+                        {block:HasTags}
+                            <div>
+                                <ul class="tags group">
+                                    {block:Tags}
+                                        <li>
+                                            <a href="{TagURL}">{Tag}</a>
+                                        </li>
+                                    {/block:Tags}
+                                </ul>
+                            </div>
+                        {/block:HasTags}
 
-                <!-- post notes -->
-                <div class="grid-row">
-                    <div class="grid-columns-12">
-                        {block:PostNotes}
-                            {PostNotes}
-                        {/block:PostNotes}
-                    </div>
-                </div>
-            {/block:Posts}
+                        <!-- post divider -->
+                        <div>
+                            <hr />
+                        </div>
 
-            <!-- pagination -->
-            {block:Pagination}
-            <div class="pagination">
-                <div class="grid-row">
-                    <div class="grid-columns-12">
-                        {block:NextPage}
-                        <a class="left" href="{NextPage}">← Previous</a>
-                        {/block:NextPage}
-                        {block:PreviousPage}
-                        <a class="right" href="{PreviousPage}">Next →</a>
-                        {/block:PreviousPage}
+                        <!-- post notes -->
+                        <div>
+                            {block:PostNotes}
+                                {PostNotes}
+                            {/block:PostNotes}
+                        </div>
+                    {/block:Posts}
+
+                    <!-- pagination -->
+                    {block:Pagination}
+                    <div class="pagination">
+                        <div>
+                            {block:NextPage}
+                            <a class="left" href="{NextPage}">&larr; Previous</a>
+                            {/block:NextPage}
+                            {block:PreviousPage}
+                            <a class="right" href="{PreviousPage}">Next &rarr;</a>
+                            {/block:PreviousPage}
+                        </div>
                     </div>
+                    {/block:Pagination}
                 </div>
             </div>
-            {/block:Pagination}
         </div>
-
         <!-- google analytics tracking code -->
         {block:IfGoogleAnalyticsID}
         <script>
